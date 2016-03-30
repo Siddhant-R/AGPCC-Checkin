@@ -1,0 +1,186 @@
+/*//////////////////////////////////////////////////////////////////////////////////////////*/
+/*This CSS file For editing or updating  */
+/*//////////////////////////////////////////////////////////////////////////////////////////*/
+
+/*Disable hover title*/
+
+.product-bottom .x-hover:after {
+	display: none !important;
+}
+.x-hovered-active .product-name {
+	color: inherit !important;
+}
+
+/*Added Footer Section*/
+
+@media only screen and (min-width : 1000px) {
+.home-section {
+	overflow: hidden;
+}
+.section-footer {
+	padding-top: 90px;
+	position: relative;
+}
+.sf-left {
+	border-radius: 100px;
+	bottom: -346px;
+	content: "";
+	height: 288px;
+	left: 67%;
+	position: absolute;
+	-webkit-transform: rotate(7deg);
+	-moz-transform: rotate(7deg);
+	transform: rotate(7deg);
+	width: 1960px;
+}
+.sf-right {
+	border-radius: 100px;
+	bottom: -328px;
+	content: "";
+	height: 288px;
+	position: absolute;
+	right: 16%;
+	-webkit-transform: rotate(-6deg);
+	-moz-transform: rotate(-6deg);
+	transform: rotate(-6deg);
+	width: 1960px;
+}
+.sf-type-2 .sf-left {
+	border-radius: 0;
+	bottom: -270px;
+	content: "";
+	height: 288px;
+	left: -2000px;
+	position: absolute;
+	-webkit-transform: rotate(7deg);
+	-moz-transform: rotate(7deg);
+	transform: rotate(7deg);
+	width: 3000px;
+}
+.sf-type-2 .sf-right {
+	border-radius: 0;
+	bottom: -225px;
+	content: "";
+	height: 288px;
+	left: 0;
+	position: absolute;
+	-webkit-transform: rotate(-5deg);
+	-moz-transform: rotate(-5deg);
+	transform: rotate(-5deg);
+	width: 3000px;
+}
+}
+/*18.12.2014  iphone touch fixed*/
+
+.cd-events-all {
+	left: -99999px;
+}
+.cd-events-all .cd-events-item {
+	left: -99999px;
+}
+.cd-events-all.is-visible {
+	left: 0px;
+}
+.home-section {
+	overflow: hidden;
+}
+
+@media only screen and (max-device-width : 768px) {
+/*Iphone fix*/	
+html .about-tabs.nav-tabs > li {
+	margin-right: 2%;
+	margin-top: 20px;
+	width: 29%;
+}
+html .section-heading {
+	font-size: 28px;
+}
+.btn:before, #filter li a:after {
+	display: none !important;
+}
+.video-popab animated img {
+	width: 100%;
+	height: auto;
+}
+html .ptable-our-packet, .ptable-more-info {
+	width: 100%;
+}
+.ptable-phone {
+	width: 100%;
+	margin-top: 5px;
+}
+html .ptable-offer-item {
+	border-bottom: 5px solid #fff;
+	color: #000;
+	display: inline-block;
+	font-size: 12px;
+	height: 90px;
+	padding: 3%;
+	text-align: center;
+	width: 100%;
+}
+.ptable-offer-button:after {
+	display: none !important;
+}
+html .ptable-offer-button {
+	width: 100%;
+}
+html .cd-email {
+	font-size: 16px;
+}
+html .flickr-feed {
+	margin: 20px auto;
+	text-align: center;
+}
+html .flickr-feed li {
+	display: inline-block;
+	margin-bottom: 1%;
+	margin-right: 1%;
+}
+html .loaded .ip-logo img, html .blog-logo img {
+	max-width: 80%;
+}
+.loaded .ip-logo img, .blog-logo img {
+	width: 100%;
+	height: auto;
+	margin-bottom: 20px;
+}
+#cd-nav {
+	z-index: 9999;
+}
+#iview {
+	display: none !important;
+}
+.header-home {
+	background: #000;
+}
+html .header-home .blog-logo {
+	left: 0;
+	padding: 20px;
+	position: relative !important;
+	top: 0 !important;
+}
+html .blockquote-quote {
+	padding: 40px 0 40px 0px;
+}
+.service-item {
+	padding: 0 20px;
+}
+html body #cd-nav li a {
+	font-size: 17px !important;
+	margin: 7px !important;
+	padding: 5px !important;
+}
+html #cd-nav ul ul li a {
+	font-size: 14px !important;
+}
+.events-date {
+	color: #ffc908 !important;
+}
+.events-content h3, .events-content h3 strong {
+	color: #000 !important;
+}
+
+
+
+}

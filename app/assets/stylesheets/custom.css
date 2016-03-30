@@ -1,0 +1,49 @@
+
+
+
+/*//////////////////////////////////////////////////////////////////////////////////////////*/
+/* Please for your own changes use this file.  */
+/*//////////////////////////////////////////////////////////////////////////////////////////*/
+
+.body{
+		font-family: 'Roboto', sans-serif;
+
+}
+
+.cust-aboutus-heading{
+	margin-top: 7%;
+	font-size: 22px;
+	line-height: 35px;
+}
+
+.app-event-checkin-heading{
+	margin-top: 2%;
+	font-family: 'Roboto', sans-serif;
+	font-size: 30px;
+	line-height: 35px;
+}
+
+.form-box {
+	padding: 30px;
+	margin-bottom: 30px;
+	color: #000000;
+	font-family: 'Roboto', sans-serif;
+	background-color: #cccccc
+}
+.form-box h1, .form-box .h1 {
+	color: inherit
+}
+.form-box p {
+	margin-bottom: 15px;
+	font-size: 21px;
+	font-weight: 200
+}
+.form-box>hr {
+	border-top-color: #d5d5d5
+}
+.container .form-box {
+	border-radius: 0
+}
+.form-box .container {
+	max-width: 100%
+}

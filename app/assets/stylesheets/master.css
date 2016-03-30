@@ -1,0 +1,52 @@
+
+
+/*------------------------------------------------------------------
+[Master Stylesheet]
+
+Project:	X-Sport
+Version:	1.0
+Last change:	17/11/2014 [fixed minor bugs]
+Assigned to:	Alex Zaymund
+Primary use:	Xtreme Sport
+-------------------------------------------------------------------*/
+
+
+/* MAIN CSS */
+@import url('bootstrap.css');
+@import url('theme.css');
+@import url('hover-min.css');
+@import url('shop.css');
+@import url('blog.css');
+@import url('animate.css');
+@import url('debugging.css');
+@import url('custom.css'); 
+@import url('responsive.css');
+@import url('animatedbg.css'); 
+
+/* FONTS*/
+
+@import url('../webfontkit/stylesheet.css');
+@import url('../plugins/icomoon/style.css');
+@import url('../plugins/simple/simple-line-icons.css');
+@import url(http://fonts.googleapis.com/css?family=Roboto:300);
+
+
+
+/* PLUGIN CSS */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
