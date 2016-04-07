@@ -1,15 +1,19 @@
 Rails.application.routes.draw do
+  get 'events/index'
+
+  get 'events/show'
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  get 'dashboards/index'
+
+  get 'logins/index'
   
-  get    'login'   => 'sessions#new'
-  post   'login'   => 'sessions#create'
-  get    'logout'  => 'sessions#destroy'
-  resources :users
-  root 'sessions#new'
+  root 'events#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  #root 'users#index'
+  # root 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -59,4 +63,5 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  ActiveAdmin.routes(self)
 end
