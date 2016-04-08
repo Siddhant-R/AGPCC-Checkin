@@ -8,24 +8,25 @@ Background: events have been added to database
   
 Given the following events exist:
   
-  | title                   | description   | venue             | date         | start_time | end_time  | ticket_price | 
-  | First Event             | firstevent    | firstlocation     | 25-Nov-2014  | 1          | 2         | free         |
-  | Second Event            | secondevent   | secondlocation    | 26-Oct-2015  | 3          | 4         | 5            |
-  | Third Event             | thirdevent    | thirdlocation     | 21-Jul-2016  | 6          | 7         | free         |
+  | title                   | description   | venue             | date         | start_time | end_time  | ticket_price | id  | 
+  | First Event             | firstevent    | firstlocation     | 25-Nov-2014  | 1          | 2         | free         | 100 |
+  | Second Event            | secondevent   | secondlocation    | 26-Oct-2015  | 3          | 4         | 5            | 200 |
+  | Third Event             | thirdevent    | thirdlocation     | 21-Jul-2016  | 6          | 7         | free         | 300 |
 
 
 Scenario: create new event
   When I follow "Events"
-  When I follow "New event"
-  And I go to the Create event page
-  And I fill in "title" with "fakeevent"
-  And I fill in "description" with "fakedescription"
-  And I fill in "venue" with "fakelocation"
-  And I fill in "date" with "01-Jan-2000"
-  And I fill in "start_time" with "8"
-  And I fill in "end_time" with "9"
-  And I fill in "ticket_price" with "10"
-  And I press "save changes"
+  And I go to Events Page
+  And I follow "New Event"
+  And I go to the New event page
+  And I fill in "Title" with "fakeevent"
+  And I fill in "Description" with "fakedescription"
+  And I fill in "Venue" with "fakelocation"
+  And I fill in "Start Time" with "8"
+  And I fill in "End Time" with "9"
+  And I fill in "Ticket Price" with "10"
+  And I fill in "Date" with "01-January-2017"
+  And I press "Create Event"
   Then I should see title "fakeevent"
   And I should see description "fakedescription"
   And I should see venue "fakelocation"
@@ -39,14 +40,14 @@ Scenario: Updating an event
   When I follow "First Event"
   And go to the First event's page
   And I follow "Edit Event"
-  And I fill in "title" with "fakeevent2"
-  And I fill in "description" with "fakedescription2"
-  And I fill in "venue" with "fakelocation2"
-  And I fill in "date" with "01-Jan-2002"
-  And I fill in "start_time" with "11"
-  And I fill in "end_time" with "12"
-  And I fill in "ticket_price" with "free"
-  And I press "save changes"
+  And I fill in "Title" with "fakeevent2"
+  And I fill in "Description" with "fakedescription2"
+  And I fill in "Venue" with "fakelocation2"
+  And I fill in "Date" with "01-Jan-2002"
+  And I fill in "Start Time" with "11"
+  And I fill in "End Time" with "12"
+  And I fill in "Ticket Price" with "free"
+  And I press "Update Event"
   Then I should see updated title "fakeevent2"
   And I should see updated description "fakedescription2"
   And I should see updated venue "fakelocation2"
