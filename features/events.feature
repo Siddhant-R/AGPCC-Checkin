@@ -11,11 +11,12 @@ Given the following events exist:
   | title                   | description   | venue             | date         | start_time | end_time  | ticket_price | 
   | First Event             | firstevent    | firstlocation     | 25-Nov-2014  | 1          | 2         | free         |
   | Second Event            | secondevent   | secondlocation    | 26-Oct-2015  | 3          | 4         | 5            |
-  | Third Event             | thirdevent    | thirdlocation     | 21-Jul-2016  | 6          | 7         | free            |
+  | Third Event             | thirdevent    | thirdlocation     | 21-Jul-2016  | 6          | 7         | free         |
 
 
 Scenario: create new event
-  When I follow "Create events"
+  When I follow "Events"
+  When I follow "New event"
   And I go to the Create event page
   And I fill in "title" with "fakeevent"
   And I fill in "description" with "fakedescription"
@@ -37,6 +38,7 @@ Scenario: create new event
 Scenario: Updating an event
   When I follow "First Event"
   And go to the First event's page
+  And I follow "Edit Event"
   And I fill in "title" with "fakeevent2"
   And I fill in "description" with "fakedescription2"
   And I fill in "venue" with "fakelocation2"
