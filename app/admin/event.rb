@@ -1,6 +1,6 @@
 ActiveAdmin.register Event do
 
-    permit_params :title, :description, :venue, :date, :start_time, :end_time, :ticket_price
+    permit_params :title, :description, :venue, :start_time, :end_time, :ticket_price
     
     scope :past_events
     scope :future_events
@@ -28,7 +28,6 @@ ActiveAdmin.register Event do
         f.inputs "Timing Details" do
             f.input :start_time, label: "Start Time"
             f.input :end_time, label: "End Time"
-            f.input :date, label: "Date"
         end
         f.inputs "Ticket Details" do
             f.input :ticket_price, label: "Ticket price" 
