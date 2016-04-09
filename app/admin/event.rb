@@ -5,9 +5,9 @@ ActiveAdmin.register Event do
     scope :past_events
     scope :future_events
     #scope :ongoing_events
+    
     index do
         column :title
-        column :date
         column :venue
         column :start_time
         column :end_time
