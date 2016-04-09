@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-feature 'Managing Admin users' do
-  scenario 'Guests cannot create Admins' do
+feature 'Managing events' do
+  scenario 'Guests cannot create events' do
     visit root_path
-    expect(page).to_not have_link 'New Admin User'
+    expect(page).to_not have_link 'New Event'
   end
 
   context 'as an admin user' do
@@ -23,16 +23,18 @@ feature 'Managing Admin users' do
       click_button 'Login'
     end
 
-    scenario 'Creating a new Admin User' do
-      click_link 'Admin Users'
-      click_link 'New Admin User'
+    scenario 'Creating a Event' do
+      click_link 'Events'
+      click_link 'New Event'
 
-      fill_in 'admin_user_email', :with => 'admin1@example.com'
-      fill_in 'admin_user_password', :with => 'password'
-      fill_in 'admin_user_password_confirmation', :with => 'password'
+      fill_in 'event_title', :with => 'New Event'
+      fill_in 'event_description', :with => 'This Event was created from the Admin Interface'
+      fill_in 'event_venue', :with => 'This Event was created from the Admin Interface'
+      fill_in 'event_start_time', :with => 'This Event was created from the Admin Interface'
+      fill_in 'event_end_time', :with => 'This Event was created from the Admin Interface'
+      fill_in 'event_ticket_price', :with => 'This Event was created from the Admin Interface'
       click_button 'Create Event'
-      expect(page).to have_content 'admin1@example.com'
-      expect(page).to have_content 'Admin user was successfully created.'
+      expect(page).to have_content 'Event was successfully created.'
     end
 
     #context 'with an existing blog post' do
