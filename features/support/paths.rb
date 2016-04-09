@@ -14,13 +14,20 @@ module NavigationHelpers
     case page_name
 
     when /^the home\s?page$/
-      '/admin'
+      '/'
    
     when /^Events/
      'admin/events'
   
+   when /^New Event/
+      'events/new'
+      
     when /^First Event/
-     'admin/events/100' 
+     'admin/events/100'
+     
+    when /^Second Event/
+      "events/200"
+   
      
      
      
