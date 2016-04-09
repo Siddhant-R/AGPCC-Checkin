@@ -2,8 +2,8 @@ ActiveAdmin.register Event do
 
     permit_params :title, :description, :venue, :date, :start_time, :end_time, :ticket_price
     
-    #scope :past_events
-    #scope :future_events
+    scope :past_events
+    scope :future_events
     #scope :ongoing_events
     index do
         column :title
