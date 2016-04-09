@@ -21,6 +21,7 @@ gem 'coffee-rails', '~> 4.1.0'
 ############ newly added
 gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
+gem 'geocoder'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -58,7 +59,6 @@ group :development do
 end
 
 group :development, :test do
-  gem 'sqlite3'
   gem 'test-unit'
   gem 'byebug'
   gem 'cucumber-rails', :require => false
@@ -67,7 +67,4 @@ group :development, :test do
   gem 'capybara'
   gem 'launchy'
   gem 'simplecov'
-end
-group :production do
-  gem 'pg'
 end

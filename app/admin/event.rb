@@ -14,4 +14,25 @@ ActiveAdmin.register Event do
         column :ticket_price
         actions
     end
+    
+    form multipart: true do |f|
+        f.inputs "Event Details" do
+            f.input :title, label: "Event Title"
+            f.input :description, label: "Description"
+        end
+        f.inputs "Location Details" do
+            f.input :venue, label: "Venue"
+            f.input :longitude, label: "Longitude"
+            f.input :latitude, label: "Latitude"
+        end
+        f.inputs "Timing Details" do
+            f.input :start_time, label: "Start Time"
+            f.input :end_time, label: "End Time"
+            f.input :date, label: "Date"
+        end
+        f.inputs "Ticket Details" do
+            f.input :ticket_price, label: "Ticket price" 
+        end
+        f.actions
+    end
 end
