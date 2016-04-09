@@ -17,16 +17,20 @@ module NavigationHelpers
       '/admin/login'
    
     when /^Events/
-     'events'
+     'admin/events'
   
    when /^New Event/
       'events/new'
       
     when /^First Event/
-     'admin/events/100'
+     'events/100'
      
     when /^Second Event/
       "events/200"
+    
+    when /^Third Event/
+      "events/300"
+    
    
      
      
