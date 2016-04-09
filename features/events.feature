@@ -15,8 +15,9 @@ Given the following events exist:
 
 
 Scenario: viewing event's details
-  When I login
-  Then I am on Dashboard
+  When I am on Login page
+  And I login
+#  Then I am on Dashboard
   When I follow Events
   And I follow Second Event
   Then I should see title "Second Event"

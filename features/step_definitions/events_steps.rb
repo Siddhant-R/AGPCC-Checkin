@@ -81,3 +81,7 @@ end
 Then /^I am on Dashboard$/ do
     page.should have_content "New Event"
 end
+
+When /^I am on Login page$/ do
+  visit admin_root_path
+end
