@@ -8,7 +8,32 @@
 </div>
 <br><br><br>
 <div class="container">
-    <h4>List of Events</h4>
+    <h4>Ongoing Events</h4>
+    <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Event Title</th>
+        <th>About</th>
+        <th>Venue</th>
+        <th>End Time</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @current_events.each do |event| %> 
+          <tr>
+            <td><%= event.title %></td>
+            <td><%= event.description %></td>
+            <td><%= event.venue %></td>
+            <td><%= event.end_time %></td>
+            <td><form action="check-in"><input type="submit" value="Check-In"></form></td>
+          </tr>
+      <% end %>
+    </tbody>
+</div>
+<br><br><br>
+<div class="container">
+    <h4>Future Events</h4>
     <table class="table table-hover">
     <thead>
       <tr>
@@ -17,18 +42,19 @@
         <th>Start Time</th>
         <th>End Time</th>
         <th>Ticket Price</th>
+        <th>Action</th>
       </tr>
     </thead>
     <tbody>
-      <% @events.each do |event| %> 
+      <% @future_events.each do |event| %> 
           <tr>
             <td><%= event.title %></td>
             <td><%= event.venue %></td>
             <td><%= event.start_time %></td>
             <td><%= event.end_time %></td>
             <td><%= event.ticket_price %></td>
+            <td><form action="rsvp"><input type="submit" value="R.S.V.P."></form></td>
           </tr>
       <% end %>
     </tbody>
-    
 </div>
