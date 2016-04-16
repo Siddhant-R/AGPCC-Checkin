@@ -3,6 +3,8 @@ class Event < ActiveRecord::Base
     validates :venue, presence: true
     validates :ticket_price, presence: true
     
+    has_many :members_checkin, class_name: 'CheckIn', foreign_key: :event_id
+    
     def index
         @events = Event.order('id desc').all
     end
