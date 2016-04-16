@@ -1,0 +1,201 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+.body{
+		font-family: 'Roboto', sans-serif;
+
+}
+/* 1.Home Mega Menu */
+
+.yamm.navbar-default {
+	background-color: #460000;
+	border: none;
+}
+.yamm.navbar-default li.active {
+	background-color: #460000;
+}
+.yamm.navbar-default li.active {
+}
+.dropdown-menu {
+	background: #222222;
+}
+.yamm.navbar-default .navbar-nav > li > a {
+	font-family: 'Roboto', sans-serif;
+	color: #fff;
+	font-size: 14px;
+	text-transform: uppercase;
+	transition: all 0.2s ease-in-out 0s;
+}
+.yamm.navbar-default .navbar-nav > li:hover > a {
+	background-color: #ffffff;
+	border: none;
+	font-family: 'Roboto', sans-serif;
+	color: #460000;
+	font-size: 14px;
+	text-transform: uppercase;
+	transition: all 0.2s ease-in-out 0s;
+}
+html .navbar-default .navbar-nav > .active > a, html .navbar-default .navbar-nav > .active > a:hover, html .navbar-default .navbar-nav > .active > a:focus {
+	background-color: #ffffff;
+	border: none;
+	font-family: 'Roboto', sans-serif;
+	color: #460000;
+	font-size: 14px;
+	text-transform: uppercase;
+	transition: all 0.2s ease-in-out 0s;
+}
+.dropdown-menu .thumbnail {
+	background-color: transparent;
+	border: 0;
+	border-radius: 0;
+	padding: 0px;
+	overflow: hidden;
+	position: relative;
+}
+.dropdown-menu .thumbnail img {
+	-webkit-transition: all .3s ease-out;
+	-moz-transition: all .3s ease-out;
+	-ms-transition: all .3s ease-out;
+	-o-transition: all .3s ease-out;
+	transition: all .3s ease-out
+}
+.dropdown-menu .thumbnail:hover img {
+}
+.dropdown-menu .thumbnail:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 100%;
+	background-color: rgba(255,255,255,0.4);
+	-webkit-transition: none;
+	-moz-transition: none;
+	-ms-transition: none;
+	-o-transition: none;
+	transition: none
+}
+.dropdown-menu .thumbnail:hover:after {
+	width: 120%;
+	background-color: rgba(255,255,255,0);
+	-webkit-transition: all .3s ease-out;
+	-moz-transition: all .3s ease-out;
+	-ms-transition: all .3s ease-out;
+	-o-transition: all .3s ease-out;
+	transition: all .3s ease-out
+}
+.yamm .dropdown-menu li a, .yamm .dropdown-menu li {
+	font-family: 'latolight';
+	color: #cccccc;
+	font-size: 13px;
+	position: relative;
+}
+.navbar-nav .yamm-classic li a {
+	margin-bottom: 0 !important;
+	padding: 10px 20px !important;
+	text-transform: uppercase;
+}
+.yamm-classic .dropdown-menu {
+	margin-bottom: 0 !important;
+	padding-bottom: 0 !important;
+}
+.yamm-classic .dropdown-menu li {
+	margin-bottom: 0 !important;
+	position: relative;
+}
+.yamm .dropdown-menu li {
+	margin-bottom: 5px;
+	position: relative;
+}
+.yamm .dropdown-menu li li {
+	margin-left: 20px;
+}
+.yamm .dropdown-menu li li:before {
+	-webkit-transition: all .3s ease-out;
+	-moz-transition: all .3s ease-out;
+	-ms-transition: all .3s ease-out;
+	-o-transition: all .3s ease-out;
+	transition: all .3s ease-out;
+	content: '';
+	border: 5px solid #fff;
+	border-bottom-color: transparent  !important;
+	border-left-color: transparent !important;
+	left: -20px;
+	position: absolute;
+	top: 5px;
+}
+.yamm .dropdown-menu li a {
+	padding: 5px;
+	-webkit-transition: all .3s ease-out;
+	-moz-transition: all .3s ease-out;
+	-ms-transition: all .3s ease-out;
+	-o-transition: all .3s ease-out;
+	transition: all .3s ease-out;
+}
+.yamm .dropdown-menu li a:hover {
+	background-color: #460000;
+	text-decoration: none !important;
+	color: #FFF;
+}
+.yamm .dropdown-menu li:hover:before {
+	border-color: #460000;
+}
+.yamm .dropdown-menu li:hover > a {
+	text-decoration: underline;
+}
+.yamm .dropdown-menu ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.yamm .dropdown-menu h5 {
+	font-family: 'oswaldbook';
+	text-transform: uppercase;
+	font-size: 16px;
+	color: #fff;
+	position: relative;
+	padding-bottom: 15px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #444444;
+}
+.yamm .dropdown-menu h5:after {
+	border-bottom: 1px solid #444444;
+	bottom: -3px;
+	content: "";
+	display: inline-block;
+	left: 0;
+	position: absolute;
+	width: 100%;
+}
+.yamm .dropdown-menu h5:before {
+	-webkit-transition: all .3s ease-out;
+	-moz-transition: all .3s ease-out;
+	-ms-transition: all .3s ease-out;
+	-o-transition: all .3s ease-out;
+	transition: all .3s ease-out;
+	content: '';
+	border: 4px solid #460000;
+	border-bottom-color: transparent !important;
+	border-right-color: transparent !important;
+	left: -12px;
+	position: absolute;
+	top: -12px;
+}
+.yamm .dropdown-menu h5:hover:before {
+	border-color: #460000;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
