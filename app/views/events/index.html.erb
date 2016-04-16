@@ -20,7 +20,7 @@
             <td><%= event.description %></td>
             <td><%= event.venue %></td>
             <td><%= event.end_time %></td>
-            <td><form action="check-in"><input type="submit" value="Check-In"></form></td>
+            <td><%= link_to "Check In.", registration_check_in_path %></td>
           </tr>
       <% end %>
     </tbody>
@@ -47,7 +47,7 @@
             <td><%= event.start_time %></td>
             <td><%= event.end_time %></td>
             <td><%= event.ticket_price %></td>
-            <td><form action="rsvp"><input type="submit" value="R.S.V.P."></form></td>
+            <td><%= link_to "R.S.V.P.", registration_rsvp_path %></td>
           </tr>
       <% end %>
     </tbody>

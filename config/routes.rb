@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'registration/check_in'
+
+  get 'registration/rsvp'
+
   get 'events/index'
 
   get 'events/show'
