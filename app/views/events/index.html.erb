@@ -20,7 +20,7 @@
             <td><%= event.description %></td>
             <td><%= event.venue %></td>
             <td><%= event.end_time %></td>
-            <td><%= link_to 'Check In', controller: "registration", action: "check_in_to", id: event.id %></td>
+            <td><%= link_to 'Check In',controller: "check_in", action: "new", id: event.id %></td>
           </tr>
       <% end %>
     </tbody>
@@ -47,7 +47,7 @@
             <td><%= event.start_time %></td>
             <td><%= event.end_time %></td>
             <td><%= event.ticket_price %></td>
-            <td><%= link_to 'R.S.V.P.', controller: "registration", action: "rsvp_to", id: event.id %></td>
+            <td><%= link_to 'R.S.V.P.', action: "rsvp", id: event.id %></td>
               
           </tr>
       <% end %>

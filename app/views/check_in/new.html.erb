@@ -1,0 +1,7 @@
+<h1>This is the Check-In page for <%= @event.title %></h1>
+<p>Find me in app/views/registration/rsvp.html.erb</p>
+<%= form_for @check_in, url: {action: "create"} do |f| %>
+  <%= f.number_field :member_id %>
+  <%= f.number_field :event_id %>
+  <%= f.submit "Check In" %>
+<% end %>

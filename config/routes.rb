@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'check_in/new' => 'check_in#new'
+
+  post 'check_in/create' => 'check_in#create'
+
+  get 'events/rsvp' => 'events#rsvp'
+  
   get 'events/index'
 
   get 'events/show'
