@@ -1,6 +1,9 @@
 <div class="container">
     <h2 class="section-subheading"> AGPCC Event Managament System</h2><br>
 </div>
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% end %>
 <div class="container">
     <h4>Ongoing Events</h4>
     <table class="table table-hover">

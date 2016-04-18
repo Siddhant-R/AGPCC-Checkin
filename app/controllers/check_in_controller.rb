@@ -17,6 +17,7 @@ class CheckInController < ApplicationController
     if (@member)
       @check_in = CheckIn.new(event_id: @event.id, member_id: @member.id)
       if @check_in.save
+        flash[:notice] = "Check in Successful"
         redirect_to root_path
       end
     else
@@ -30,6 +31,7 @@ class CheckInController < ApplicationController
     if @member.save
       @check_in = CheckIn.new(event_id: @event.id, member_id: @member.id)
       if @check_in.save
+        flash[:notice] = "Check in Successful"
         redirect_to root_path
       end
     else
