@@ -1,11 +1,12 @@
-<h1>This is the Check-In page with all the details for <%= @event.title %></h1>
-<%= form_for(:member, :url => {:action => 'create_with_member_details' ,:controller => 'check_in' ,:id => @event.id}) do |f| %>  
-<table>
-  <tr><th><%= f.label :first_name %><%= f.text_field(:first_name) %></th></tr>
-  <tr><th><%= f.label :last_name %><%= f.text_field(:last_name) %></th></tr>
-  <tr><th><%= f.label :Email %><%= f.email_field(:email) %></th></tr>
-  <tr><th><%= f.label :Gender %><%= f.text_field(:gender) %></th></tr>
-  <tr><th><%= f.label :classification %><%= f.text_field(:classification) %></th></tr>
-  <tr><th><%= submit_tag ("Check In") %></th></tr>
-</table>
+<div class="container">
+  <h2 class="section-subheading">Check-In to <%= @event.title %></h2>
+  <h1> Welcome to Aggie Graduate &amp; Professional Community Club! </h1>
+  <div class="form-box">
+<%= form_for(:member, :url => {:action => 'create_with_member_details' ,:controller => 'check_in' ,:id => @event.id, :class => 'form-group'}) do |f| %>  
+<%= f.label :first_name %><%= f.text_field(:first_name, :class=> 'form-control') %></th></tr>
+<%= f.label :last_name %><%= f.text_field(:last_name, :class=> 'form-control') %>
+<%= f.label :Email %><%= f.email_field(:email, :class=> 'form-control') %>
+<%= f.label :Gender %><%= f.text_field(:gender, :class=> 'form-control') %>
+<%= f.label :classification %><%= f.text_field(:classification, :class=> 'form-control') %>
+<%= submit_tag ("Check In") %></th></tr>
 <% end %>
