@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
 
   get 'check_in/:id/new' => 'check_in#new'
-  get 'check_in/:id/new_with_details' => 'check_in#new_with_details'
+  get 'check_in/:id/new_with_new_member' => 'check_in#new_with_new_member'
   
   post 'check_in/:id/create' => 'check_in#create'
-  post 'check_in/:id/create_with_member_details' => 'check_in#create_with_member_details'
+  post 'check_in/:id/create_with_new_member' => 'check_in#create_with_new_member'
   
 
   get 'events/index'

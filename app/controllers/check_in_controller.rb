@@ -4,7 +4,7 @@ class CheckInController < ApplicationController
     @event = Event.find_by_id(params[:id])
   end
   
-  def new_with_details
+  def new_with_new_member
     @event = Event.find_by_id(params[:id])
   end
 
@@ -17,27 +17,30 @@ class CheckInController < ApplicationController
     if (@member)
       @check_in = CheckIn.new(event_id: @event.id, member_id: @member.id)
       if @check_in.save
+        flash[:notice] = "Check in Successful"
         redirect_to root_path
       end
     else
-      redirect_to :action => 'new_with_details', :id => @event.id
+      redirect_to :action => 'new_with_new_member', :id => @event.id
     end
   end
   
-  def create_with_member_details
+  def create_with_new_member
     @event = Event.find_by_id(params[:id])
     @member = Member.new(member_params)
     if @member.save
       @check_in = CheckIn.new(event_id: @event.id, member_id: @member.id)
       if @check_in.save
+        flash[:notice] = "Check in Successful"
         redirect_to root_path
       end
     else
-      redirect_to action: "new_with_details", id: @event.id
+      redirect_to action: "new_with_new_member", id: @event.id
     end
   end
   
   def member_params
     params.require(:member).permit(:first_name, :last_name, :email, :gender, :classification)
   end
+  
 end
