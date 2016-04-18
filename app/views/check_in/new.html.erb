@@ -1,12 +1,5 @@
-<div class="container">
-  <h2 class="section-subheading">Check-In to <%= @event.title %></h2>
-  <h1> Welcome to Aggie Graduate &amp; Professional Community Club! </h1>
-  <div class="form-box">
-    <%= form_tag(:action => 'create' , :id => @event.id, :class => 'form-group') do %>
-    <h4>Please enter your email id :</h4>
-    <%= email_field(:member, :email, :class=> 'form-control') %>
-    <br>
-    <%= submit_tag "Check In", :class => "btn btn-warning"  %>
-    <% end %>
-  </div>
-</div>
+<h1>This is the Check-In page for <%= @event.title %></h1>
+<%= form_tag(:action => 'create' , :id => @event.id) do %>
+  <%= email_field(:member, :email) %>
+  <%= submit_tag ("Check In") %>
+<% end %>
