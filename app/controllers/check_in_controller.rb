@@ -19,6 +19,8 @@ class CheckInController < ApplicationController
       if @check_in.save
         flash[:notice] = "Check in Successful"
         redirect_to root_path
+      else
+        flash[:notice] = @check_in.errors.messages
       end
     else
       redirect_to :action => 'new_with_new_member', :id => @event.id
@@ -33,8 +35,11 @@ class CheckInController < ApplicationController
       if @check_in.save
         flash[:notice] = "Check in Successful"
         redirect_to root_path
+      else
+        flash[:notice] = @check_in.errors.messages
       end
     else
+      flash[:notice] = @member.errors.messages
       redirect_to action: "new_with_new_member", id: @event.id
     end
   end
