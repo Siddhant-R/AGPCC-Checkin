@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'rsvp/:id/new' => 'rsvp#new'
+  get 'rsvp/:id/new_with_new_member' => 'rsvp#new_with_new_member'
+  
+  post 'rsvp/:id/create' => 'rsvp#create'
+  post 'rsvp/:id/create_with_new_member' => 'rsvp#create_with_new_member'
+
   get 'check_in/:id/new' => 'check_in#new'
   get 'check_in/:id/new_with_new_member' => 'check_in#new_with_new_member'
   
