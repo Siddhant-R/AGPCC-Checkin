@@ -1,0 +1,12 @@
+<h1>This is the Check-In page with all the details for <%= @event.title %></h1>
+<p>Find me in app/views/registration/rsvp.html.erb</p>
+<%= form_for(:member, :url => {:action => 'create_with_member_details' ,:controller => 'check_in' ,:id => @event.id}) do |f| %>  
+<table>
+  <tr><th><%= f.label :first_name %><%= f.text_field(:first_name) %></th></tr>
+  <tr><th><%= f.label :last_name %><%= f.text_field(:last_name) %></th></tr>
+  <tr><th><%= f.label :Email %><%= f.email_field(:email) %></th></tr>
+  <tr><th><%= f.label :Gender %><%= f.text_field(:gender) %></th></tr>
+  <tr><th><%= f.label :classification %><%= f.text_field(:classification) %></th></tr>
+  <tr><th><%= submit_tag ("Check In") %></th></tr>
+</table>
+<% end %>

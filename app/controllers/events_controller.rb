@@ -16,10 +16,6 @@ class EventsController < ApplicationController
     end
   end
   
-  def rsvp
-    @event = Event.find_by_id(params[:id])
-  end
-  
   private
   def event_params
     params.require(:event).permit(:title, :description, :venue, :ticket_price, :start_time, :end_time, :longitude, :latitude )

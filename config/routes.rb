@@ -1,20 +1,19 @@
 Rails.application.routes.draw do
 
-  get 'check_in/new' => 'check_in#new'
-
-  post 'check_in/create' => 'check_in#create'
-
-  get 'events/rsvp' => 'events#rsvp'
+  get 'check_in/:id/new' => 'check_in#new'
+  get 'check_in/:id/new_with_details' => 'check_in#new_with_details'
   
-  get 'events/index'
+  post 'check_in/:id/create' => 'check_in#create'
+  post 'check_in/:id/create_with_member_details' => 'check_in#create_with_member_details'
+  
 
+  get 'events/index'
   get 'events/show'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   get 'dashboards/index'
 
-  get 'logins/index'
-  
+  get 'logins/index'  
   root 'events#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
