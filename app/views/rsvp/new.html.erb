@@ -1,0 +1,5 @@
+<h1>This is the R.S.V.P. page for <%= @event.title %></h1>
+<%= form_tag(:action => 'create' , :id => @event.id) do %>
+  <%= email_field(:member, :email) %>
+  <%= submit_tag ("Check In") %>
+<% end %>
