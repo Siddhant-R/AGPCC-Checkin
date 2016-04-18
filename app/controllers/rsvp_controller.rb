@@ -1,5 +1,4 @@
-class CheckInController < ApplicationController
-  
+class RsvpController < ApplicationController
   def new
     @event = Event.find_by_id(params[:id])
   end
@@ -15,8 +14,8 @@ class CheckInController < ApplicationController
     @event = Event.find_by_id(params[:id])
     @member = Member.find_by_email(params[:member][:email])
     if (@member)
-      @check_in = CheckIn.new(event_id: @event.id, member_id: @member.id)
-      if @check_in.save
+      @rsvp = CheckIn.new(event_id: @event.id, member_id: @member.id)
+      if @rsvp.save
         flash[:notice] = "Check in Successful"
         redirect_to root_path
       else
@@ -31,9 +30,9 @@ class CheckInController < ApplicationController
     @event = Event.find_by_id(params[:id])
     @member = Member.new(member_params)
     if @member.save
-      @check_in = CheckIn.new(event_id: @event.id, member_id: @member.id)
-      if @check_in.save
-        flash[:notice] = "Check in Successful"
+      @rsvp = CheckIn.new(event_id: @event.id, member_id: @member.id)
+      if @rsvp.save
+        flash[:notice] = "R.S.V.P. Successful"
         redirect_to root_path
       else
         flash[:notice] = @check_in.errors.messages
@@ -47,5 +46,4 @@ class CheckInController < ApplicationController
   def member_params
     params.require(:member).permit(:first_name, :last_name, :email, :gender, :classification)
   end
-  
 end
