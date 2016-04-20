@@ -8,10 +8,10 @@ Background: events have been added to database
   
 Given the following events exist:
   
-  | title                   | description   | venue             | date         | start_time | end_time  | ticket_price | id  | 
-  | First Event             | firstevent    | firstlocation     | 25-November-2014  | 1          | 2         | free         | 100 |
-  | Second Event            | secondevent   | secondlocation    | 26-Oct-2015  | 3          | 4         | 5            | 200 |
-  | Third Event             | thirdevent    | thirdlocation     | 21-Jul-2017  | 6          | 7         | free         | 300 |
+  | title                   | description   | venue             | longitude | latitude | date               | start_time | end_time  | ticket_price | id  | 
+  | First Event             | firstevent    | firstlocation     |-90.0000000|20.0000000| 25-November-2014   | 1          | 2         | free         | 100 |
+  | Second Event            | secondevent   | secondlocation    | 30.0000000|40.0000000| 26-Oct-2015        | 3          | 4         | 5            | 200 |
+  | Third Event             | thirdevent    | thirdlocation     |-15.0000000|25.0000000| 21-Jul-2017        | 6          | 7         | free         | 300 |
 
   
 Scenario: viewing First Event Details
@@ -22,7 +22,7 @@ Scenario: viewing First Event Details
   When I follow First Event
   Then I should be on First Event
   
-Scenario: viewing First Event Details
+Scenario: viewing Second Event Details
   When I login successfully
   Then I should be on Dashboard
   When I follow Events
@@ -57,6 +57,8 @@ Scenario: create new event
   When I fill in title with Event_One
   And I fill in description with fakedescription
   And I fill in venue with fakelocation
+  And I fill in longitude with -90.0000000
+  And I fill in latitude with 20.0000000
   And I fill in start_time with 8
   And I fill in end_time with 9
   And I fill in ticket_price with 10
@@ -76,6 +78,8 @@ Scenario: Updating an Event
   Then I should be on Edit Event
   When I fill in description with fakedescription2
   And I fill in venue with fakelocation2
+   And I fill in longitude with -50.0000000
+  And I fill in latitude with 60.0000000
   And I fill in start_time with 11
   And I fill in end_time with 12
   And I fill in ticket_price with 13
