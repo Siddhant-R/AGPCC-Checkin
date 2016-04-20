@@ -4,7 +4,7 @@ Given /^the following events exist:$/ do |events_table|
 events_table.hashes.each do |event|
 Event.create!(event)
 # each returned element will be a hash whose key is the table header.
-# you should arrange to add that movie to the database here.
+# you should arrange to add that event to the database here.
 end
 end
 Then /I should see title "([^"]*)"/ do |arg|
@@ -16,6 +16,14 @@ page.body.should match /#{arg}/m
 end
 
 Then /I should see venue "([^"]*)"/ do |arg|
+page.body.should match /#{arg}/m
+end
+
+Then /I should see longitude "([^"]*)"/ do |arg|
+page.body.should match /#{arg}/m
+end
+
+Then /I should see latitude "([^"]*)"/ do |arg|
 page.body.should match /#{arg}/m
 end
 
@@ -46,6 +54,15 @@ end
 Then /I should see updated venue "([^"]*)"/ do |arg|
 page.body.should match /#{arg}/m
 end
+
+Then /I should see updated longitude "([^"]*)"/ do |arg|
+page.body.should match /#{arg}/m
+end
+
+Then /I should see updated latitude "([^"]*)"/ do |arg|
+page.body.should match /#{arg}/m
+end
+
 
 Then /I should see updated date "([^"]*)"/ do |arg|
 page.body.should match /#{arg}/m
