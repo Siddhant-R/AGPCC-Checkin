@@ -85,7 +85,7 @@ Scenario: Updating an Event
   And I fill in venue with fakelocation2
    And I fill in longitude with -50.0000000
   And I fill in latitude with 20.0000000
-    And I select in start_time(1i) with 2017
+  And I select in start_time(1i) with 2017
   And I select in start_time(2i) with April
   And I select in start_time(3i) with 10
   And I select in start_time(4i) with 11
@@ -99,6 +99,27 @@ Scenario: Updating an Event
   And I press "Update Event"
   Then I should get the message Event was successfully updated
   
- 
+
+    
+#Scenario: Checkin
+#  When I press CheckIn  # This needs to change
+#  Then I should be on Current Event # Unsure about this
+#  When I press check_in
+#  And I fill in email
+#  When I press check_in
+#  And I fill in first_name
+#  And I fill in last_name
+#  And I fill in email
+#  And I fill in gender
+#  And I fill in classification
+#  And I press check_in
+#  Then I should get the message Check in Successful
   
   
+#Scenario: RSVP
+#  When I press CheckIn
+#  Then I should be on Future Event
+#  When I press rsvp
+#  And I fill in email with admin@example.com
+#  And I press rsvp
+#  Then I should get the message Check in Successful

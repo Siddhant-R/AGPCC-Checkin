@@ -33,8 +33,14 @@ module NavigationHelpers
       
     when /^Edit Event/
       '100/edit'
+# added later                                 # This needs to change
+#    when /^Online Checkin/
+#      '/#'
+#    when /Checkin/
+#      '/check_in/1/new'
       
-    
+#    when /RSVP/
+#     '/rsvp/2/new'      
    
      
      

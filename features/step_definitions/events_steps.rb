@@ -80,7 +80,9 @@ Then /I should see updated ticket_price "([^"]*)"/ do |arg|
 page.body.should match /#{arg}/m
 end
 
-
+When /^I fill in (.+)/ do |field|
+  fill_in("event[#{field}]")
+end
 
 When /^I fill in (.+) with (.+)$/ do |field, value|
   fill_in("event[#{field}]", :with => value)
@@ -130,9 +132,9 @@ Then /^I should be on (.+)$/ do |text|
   page.should have_content text
 end
 
-When /^I follow (.+)$/ do |link|
-  visit path_to(link)
-end
+#When /^I follow (.+)$/ do |link|
+#  visit path_to(link)
+#end
 
 Then /^I should get the message (.+)$/ do |msg|
   page.should have_content msg
