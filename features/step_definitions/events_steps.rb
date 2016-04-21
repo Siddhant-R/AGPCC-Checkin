@@ -80,12 +80,12 @@ Then /I should see updated ticket_price "([^"]*)"/ do |arg|
 page.body.should match /#{arg}/m
 end
 
-When /^I fill in (.+)/ do |field|
-  fill_in("event[#{field}]")
-end
+# When /^I fill in (.+)/ do |field|
+#   fill_in("event[#{field}]")
+# end
 
 When /^I fill in (.+) with (.+)$/ do |field, value|
-  fill_in("event[#{field}]", :with => value)
+  fill_in(field, :with => value)
 end
 
 
@@ -118,8 +118,12 @@ When /^I login successfully$/ do
   sign_in
 end
 
-When /^I am on Login page$/ do
-  visit admin_root_path
+When /^I am on (.+) page$/ do |page|
+  if page=="Home"
+    visit root_path
+  else
+    visit path_to(page)
+  end
 end
 
 When /^I login$/ do
@@ -132,9 +136,10 @@ Then /^I should be on (.+)$/ do |text|
   page.should have_content text
 end
 
-#When /^I follow (.+)$/ do |link|
-#  visit path_to(link)
-#end
+When /^I follow (.+)$/ do |link|
+  visit path_to(link)
+end
+
 
 Then /^I should get the message (.+)$/ do |msg|
   page.should have_content msg

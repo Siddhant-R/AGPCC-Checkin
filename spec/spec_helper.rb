@@ -18,6 +18,10 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
 require File.expand_path("../../config/environment", __FILE__)
+
+require 'simplecov'
+SimpleCov.start 'rails'
+
 require 'rspec/rails'
 require 'rspec/autorun'
 

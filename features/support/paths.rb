@@ -13,8 +13,8 @@ module NavigationHelpers
   def path_to(page_name)
     case page_name
 
-    when /^the home\s?page$/
-      '/admin/login'
+    when /^Home/
+      '/'
    
     when /^Events/
      'admin/events'
@@ -33,6 +33,12 @@ module NavigationHelpers
       
     when /^Edit Event/
       '100/edit'
+      
+    when /^Check In/
+      'check_in/200/new'
+      
+    when /^R.S.V.P./
+      'rsvp/100/new'
 # added later                                 # This needs to change
 #    when /^Online Checkin/
 #      '/#'
