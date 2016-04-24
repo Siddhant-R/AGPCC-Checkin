@@ -5,6 +5,7 @@ body{
 		font-family: 'Roboto', sans-serif;
 
 }
+
 .pad-adjust {
     padding-top:10px;
 }
@@ -29,6 +30,7 @@ h4 {
 .yamm.navbar-default {
 	background-color: #460000;
 	border: none;
+	text-align: center;
 }
 .yamm.navbar-default li.active {
 	background-color: #460000;
@@ -38,12 +40,16 @@ h4 {
 .dropdown-menu {
 	background: #222222;
 }
+
 .yamm.navbar-default .navbar-nav > li > a {
 	font-family: 'Roboto', sans-serif;
 	color: #fff;
 	font-size: 14px;
 	text-transform: uppercase;
 	transition: all 0.2s ease-in-out 0s;
+	
+
+
 }
 .yamm.navbar-default .navbar-nav > li:hover > a {
 	background-color: #ffffff;
