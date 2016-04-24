@@ -51,7 +51,8 @@ class CheckInController < ApplicationController
         flash[:success] = "Check in Successful. Thank You!"
         redirect_to root_path
       else
-        flash[:success] = @check_in.errors.messages
+        flash[:danger] = @check_in.errors[:member_id]
+        redirect_to :action => 'new', :id => @event.id
       end
     else
       redirect_to :action => 'new_with_new_member', :id => @event.id
