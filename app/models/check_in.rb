@@ -1,4 +1,4 @@
 class CheckIn < ActiveRecord::Base
-    belongs_to :member
-    belongs_to :event
+    belongs_to :member, :class_name => Member
+    belongs_to :event, :class_name => Event
 end
