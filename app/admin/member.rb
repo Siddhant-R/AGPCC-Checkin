@@ -8,7 +8,7 @@ index do
  column :email
  column :gender
  column :classification
- column :paid_status
+ column :paid_status, label: "Paid"
  column :points
  actions
 end

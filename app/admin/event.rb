@@ -25,8 +25,8 @@ ActiveAdmin.register Event do
             
         end
         f.inputs "Timing Details" do
-            f.input :start_time, label: "Start Time"
-            f.input :end_time, label: "End Time"
+            f.input :start_time, as: :date_time_picker, datepicker_options: { min_date: DateTime.now , max_date: "+10Y" }
+            f.input :end_time, as: :date_time_picker, datepicker_options: { min_date: @start_time, max_date: "+10Y" }
         end
         f.actions
     end
