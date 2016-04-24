@@ -14,9 +14,9 @@
     <h4> Email :</h4>
     <%= f.email_field :email, :class=> 'form-control', :value => @email_id %>
     <h4> Gender :</h4>
-    <%= f.select :gender, Member::GENDER, :class => 'dropdown-menu'  %>
+    <%= f.select(:gender, Member::GENDER, {}, {class: "form-control"}) %>
     <h4> Classification :</h4>
-    <%= f.select :classification, Member::CLASSIFICATION, :class => 'form-control' %>
+    <%= f.select(:classification, Member::CLASSIFICATION, {}, {class: "form-control"}) %>
     <br>
     <%= submit_tag "Check In", :class => "btn btn-warning"  %>
   <% end %>
