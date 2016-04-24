@@ -22,6 +22,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
 gem 'geocoder'
+gem 'active_skin'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -58,7 +59,7 @@ group :development do
   gem 'spring'
 end
 
-gem 'bootstrap-sass', '~> 3.2.0'
+gem 'bootstrap-sass', '~> 3.3.6'
 gem 'autoprefixer-rails'
 group :development, :test do
   gem 'test-unit'
