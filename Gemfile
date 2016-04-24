@@ -22,7 +22,6 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
 gem 'geocoder'
-gem 'active_skin'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
