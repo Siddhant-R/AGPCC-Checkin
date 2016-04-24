@@ -39,7 +39,6 @@
         <th>Venue</th>
         <th>Start Time</th>
         <th>End Time</th>
-        <th>Ticket Price</th>
         <th>Action</th>
       </tr>
     </thead>
@@ -50,7 +49,6 @@
             <td><%= event.venue %></td>
             <td><%= event.start_time %></td>
             <td><%= event.end_time %></td>
-            <td><%= event.ticket_price %></td>
             <td><%= link_to 'R.S.V.P.',controller: "rsvp", action: "new", id: event.id %></td> 
           </tr>
       <% end %>

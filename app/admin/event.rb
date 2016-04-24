@@ -12,7 +12,6 @@ ActiveAdmin.register Event do
         column :venue
         column :start_time
         column :end_time
-        column :ticket_price
         actions
     end
     
