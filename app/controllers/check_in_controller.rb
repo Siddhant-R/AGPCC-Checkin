@@ -18,13 +18,25 @@ class CheckInController < ApplicationController
     #@SID : Get users lat long from cookies via geolocation, check location.js
     @users_lat_lng = cookies[:lat_lng].split("|")
     @event_lat_lng = Array[@event.latitude,@event.longitude]
+
+    
+    if @users_lat_lng.nil?
+      flash[:danger] = "Failed. Location Services Are Not Available"
+      redirect_to root_path
+      return
+    end
+    if @users_lat_lng.include? "ERROR"
+      flash[:danger] = @users_lat_lng
+      redirect_to root_path
+      return
+    end  
+      
     
     #@SID : Calculate User's distance from event
     distance_from_event = distance(@users_lat_lng, @event_lat_lng)
     
     if(distance_from_event > 100.0)
       flash[:danger] = "Failed! You need to be present in the event to check in"
-      
       redirect_to root_path
       return
     end
@@ -33,7 +45,7 @@ class CheckInController < ApplicationController
     if (@member)
       @check_in = CheckIn.new(event_id: @event.id, member_id: @member.id)
       if @check_in.save
-        flash[:success] = "Check in Successful U: " + @users_lat_lng.join(",") + " E :" + @event_lat_lng.join(",") + " D: "+distance_from_event.to_s
+        flash[:success] = "Check in Successful. Thank You!"
         redirect_to root_path
       else
         flash[:success] = @check_in.errors.messages
@@ -50,7 +62,7 @@ class CheckInController < ApplicationController
     if @member.save
       @check_in = CheckIn.new(event_id: @event.id, member_id: @member.id)
       if @check_in.save
-        flash[:success] = "Check in Successful :" + @users_lat_lng.join(",")
+        flash[:success] = "Check in Successful. Thank you!"
         redirect_to root_path
       else
         flash[:success] = @check_in.errors.messages

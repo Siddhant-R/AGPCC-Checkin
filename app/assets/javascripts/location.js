@@ -1,10 +1,50 @@
 function getGeoLocation() {
-  navigator.geolocation.getCurrentPosition(setGeoCookie);
+  if (navigator.geolocation){
+  navigator.geolocation.getCurrentPosition(setGeoCookie, showError);
+  }
+  else {
+    alert("Location Services are not supported by your browser. Please contact helpdesk to checkin.")
+    var cookie_val = "ERROR: Location Services are not supported by your browser. Please contact helpdesk to checkin.";
+    document.cookie = "lat_lng=" + escape(cookie_val);
+  }
 }
 
 function setGeoCookie(position) {
-  var cookie_val = position.coords.latitude + "|" + position.coords.longitude;
-  document.cookie = "lat_lng=" + escape(cookie_val);
+  if (navigator.geolocation){
+    var cookie_val = position.coords.latitude + "|" + position.coords.longitude;
+    document.cookie = "lat_lng=" + escape(cookie_val);
+  }
+  else {
+    alert("Location Services are not supported by your browser. Please contact helpdesk to checkin.")
+    var cookie_val = "ERROR: Location Services are not supported by your browser. Please contact helpdesk to checkin.";
+    document.cookie = "lat_lng=" + escape(cookie_val);
+  }
+  
+}
+
+function showError(error) {
+    switch(error.code) {
+        case error.PERMISSION_DENIED:
+            var cookie_val = "ERROR: In order to check in, Please permit AGPCC APP to use location services ";
+            document.cookie = "lat_lng=" + escape(cookie_val);
+            alert(cookie_val);
+            break;
+        case error.POSITION_UNAVAILABLE:
+            var cookie_val = "ERROR: Please Enable your GPS"
+            document.cookie = "lat_lng=" + escape(cookie_val);
+            alert(cookie_val);
+            break;
+        case error.TIMEOUT:
+            var cookie_val = "ERROR: The request to get user location timed out."
+            document.cookie = "lat_lng=" + escape(cookie_val);
+            alert(cookie_val);
+            break;
+        case error.UNKNOWN_ERROR:
+            var cookie_val = "ERROR: An unknown error occurred."
+            document.cookie = "lat_lng=" + escape(cookie_val);
+            alert(cookie_val);
+            break;
+    }
 }
 
 function distance(lon1, lat1, lon2, lat2) {
