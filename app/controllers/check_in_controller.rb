@@ -14,10 +14,12 @@ class CheckInController < ApplicationController
   def create
     @event = Event.find_by_id(params[:id])
     @member = Member.find_by_email(params[:member][:email])
+    @lat_lng = cookies[:lat_lng].split("|")
+
     if (@member)
       @check_in = CheckIn.new(event_id: @event.id, member_id: @member.id)
       if @check_in.save
-        flash[:notice] = "Check in Successful"
+        flash[:notice] = "Check in Successful" + @lat_lng.join(",")
         redirect_to root_path
       else
         flash[:notice] = @check_in.errors.messages
@@ -30,10 +32,11 @@ class CheckInController < ApplicationController
   def create_with_new_member
     @event = Event.find_by_id(params[:id])
     @member = Member.new(member_params)
+    @lat_lng = cookies[:lat_lng].split("|")
     if @member.save
       @check_in = CheckIn.new(event_id: @event.id, member_id: @member.id)
       if @check_in.save
-        flash[:notice] = "Check in Successful"
+        flash[:notice] = "Check in Successful" + @lat_lng.join(",")
         redirect_to root_path
       else
         flash[:notice] = @check_in.errors.messages
