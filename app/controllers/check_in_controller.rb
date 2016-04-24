@@ -14,12 +14,21 @@ class CheckInController < ApplicationController
   def create
     @event = Event.find_by_id(params[:id])
     @member = Member.find_by_email(params[:member][:email])
-    @lat_lng = cookies[:lat_lng].split("|")
+    
+    #@SID : Get users lat long from cookies via geolocation, check location.js
+    @users_lat_lng = cookies[:lat_lng].split("|")
+    @event_lat_lng = Array[@event.latitude,@event.longitude]
+    
+    #@SID : Calculate User's distance from event
+    distance_from_event = distance(@users_lat_lng, @event_lat_lng)
+    
+    #if()
+    
 
     if (@member)
       @check_in = CheckIn.new(event_id: @event.id, member_id: @member.id)
       if @check_in.save
-        flash[:notice] = "Check in Successful" + @lat_lng.join(",")
+        flash[:notice] = "Check in Successful U: " + @users_lat_lng.join(",") + " E :" + @event_lat_lng.join(",") + " D: "+distance_from_event.to_s
         redirect_to root_path
       else
         flash[:notice] = @check_in.errors.messages
@@ -36,7 +45,7 @@ class CheckInController < ApplicationController
     if @member.save
       @check_in = CheckIn.new(event_id: @event.id, member_id: @member.id)
       if @check_in.save
-        flash[:notice] = "Check in Successful" + @lat_lng.join(",")
+        flash[:notice] = "Check in Successful :" + @users_lat_lng.join(",")
         redirect_to root_path
       else
         flash[:notice] = @check_in.errors.messages
@@ -55,7 +64,9 @@ class CheckInController < ApplicationController
   rad_per_deg = Math::PI/180  # PI / 180
   rkm = 6371                  # Earth radius in kilometers
   rm = rkm * 1000             # Radius in meters
-
+  
+  loc1[0] = loc1[0].to_f
+  loc1[1] = loc1[1].to_f
   dlat_rad = (loc2[0]-loc1[0]) * rad_per_deg  # Delta, converted to rad
   dlon_rad = (loc2[1]-loc1[1]) * rad_per_deg
 
@@ -67,5 +78,6 @@ class CheckInController < ApplicationController
 
   rm * c # Delta in meters
  end
+  
   
 end
