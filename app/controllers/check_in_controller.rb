@@ -16,7 +16,7 @@ class CheckInController < ApplicationController
     @member = Member.find_by_email(params[:member][:email])
     
     #@SID : Get users lat long from cookies via geolocation, check location.js
-    @users_lat_lng = cookies[:lat_lng].split("|")
+    @users_lat_lng = cookies[:lat_lng]
     @event_lat_lng = Array[@event.latitude,@event.longitude]
 
     
@@ -25,13 +25,14 @@ class CheckInController < ApplicationController
       redirect_to root_path
       return
     end
-    if @users_lat_lng.include? "ERROR"
+    
+    if @users_lat_lng.include?('ERR')
       flash[:danger] = @users_lat_lng
       redirect_to root_path
       return
     end  
       
-    
+    @users_lat_lng = cookies[:lat_lng].split("|")
     #@SID : Calculate User's distance from event
     distance_from_event = distance(@users_lat_lng, @event_lat_lng)
     
