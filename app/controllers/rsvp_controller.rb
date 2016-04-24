@@ -4,6 +4,7 @@ class RsvpController < ApplicationController
   end
   
   def new_with_new_member
+    @email_id = session[:email]
     @event = Event.find_by_id(params[:id])
   end
 
@@ -13,6 +14,7 @@ class RsvpController < ApplicationController
   def create
     @event = Event.find_by_id(params[:id])
     @member = Member.find_by_email(params[:member][:email])
+    session[:email] = params[:member][:email] if params[:member][:email]
     if (@member)
       @rsvp = CheckIn.new(event_id: @event.id, member_id: @member.id)
       if @rsvp.save
