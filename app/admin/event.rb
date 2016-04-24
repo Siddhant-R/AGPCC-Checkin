@@ -22,8 +22,7 @@ ActiveAdmin.register Event do
         end
         f.inputs "Location Details" do
             f.input :venue, label: "Venue"
-            f.input :longitude, label: "Longitude"
-            f.input :latitude, label: "Latitude"
+            
         end
         f.inputs "Timing Details" do
             f.input :start_time, label: "Start Time"

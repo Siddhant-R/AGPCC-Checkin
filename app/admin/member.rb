@@ -1,14 +1,16 @@
 ActiveAdmin.register Member do
 
-permit_params :email, :first_name, :last_name, :gender, :classification
+permit_params :email, :first_name, :last_name, :gender, :classification, :paid_status, :points
 
- index do    
-     column :first_name
-     column :last_name
-     column :email
-     column :gender
-     column :classification
-     actions
+index do    
+ column :first_name
+ column :last_name
+ column :email
+ column :gender
+ column :classification
+ column :paid_status
+ column :points
+ actions
 end
 
 form do |f|
@@ -18,6 +20,8 @@ form do |f|
   f.input :email
   f.input :gender,  as: :select, collection: Member::GENDER
   f.input :classification,  as: :select, collection: Member::CLASSIFICATION
+  f.input :paid_status, label: "Paid"
+  f.input :points
  end
   f.actions
 end
