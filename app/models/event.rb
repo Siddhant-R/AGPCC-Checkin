@@ -1,10 +1,9 @@
 class Event < ActiveRecord::Base
     validates :title, presence: true
     validates :venue, presence: true
-    validates :ticket_price, presence: true
     
-    has_many :members_checkin, class_name: 'CheckIn', foreign_key: :event_ID
-    has_many :members_rsvp, class_name: 'Rsvp', foreign_key: :event_ID
+    has_many :checkedin_members, class_name: 'CheckIn', foreign_key: :event_ID
+    has_many :rsvped_members, class_name: 'Rsvp', foreign_key: :event_ID
     
     geocoded_by :venue
     after_validation :geocode

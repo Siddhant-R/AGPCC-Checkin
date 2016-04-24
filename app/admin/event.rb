@@ -30,9 +30,6 @@ ActiveAdmin.register Event do
             f.input :start_time, label: "Start Time"
             f.input :end_time, label: "End Time"
         end
-        f.inputs "Ticket Details" do
-            f.input :ticket_price, label: "Ticket price" 
-        end
         f.actions
     end
 end
