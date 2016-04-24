@@ -23,7 +23,8 @@ class CheckInController < ApplicationController
     distance_from_event = distance(@users_lat_lng, @event_lat_lng)
     
     if(distance_from_event > 100.0)
-      flash[:notice] = "Failed! You need to be present in the event to check in"
+      flash[:danger] = "Failed! You need to be present in the event to check in"
+      
       redirect_to root_path
       return
     end
@@ -32,10 +33,10 @@ class CheckInController < ApplicationController
     if (@member)
       @check_in = CheckIn.new(event_id: @event.id, member_id: @member.id)
       if @check_in.save
-        flash[:notice] = "Check in Successful U: " + @users_lat_lng.join(",") + " E :" + @event_lat_lng.join(",") + " D: "+distance_from_event.to_s
+        flash[:success] = "Check in Successful U: " + @users_lat_lng.join(",") + " E :" + @event_lat_lng.join(",") + " D: "+distance_from_event.to_s
         redirect_to root_path
       else
-        flash[:notice] = @check_in.errors.messages
+        flash[:success] = @check_in.errors.messages
       end
     else
       redirect_to :action => 'new_with_new_member', :id => @event.id
@@ -49,13 +50,13 @@ class CheckInController < ApplicationController
     if @member.save
       @check_in = CheckIn.new(event_id: @event.id, member_id: @member.id)
       if @check_in.save
-        flash[:notice] = "Check in Successful :" + @users_lat_lng.join(",")
+        flash[:success] = "Check in Successful :" + @users_lat_lng.join(",")
         redirect_to root_path
       else
-        flash[:notice] = @check_in.errors.messages
+        flash[:success] = @check_in.errors.messages
       end
     else
-      flash[:notice] = @member.errors.messages
+      flash[:danger] = @member.errors.messages
       redirect_to action: "new_with_new_member", id: @event.id
     end
   end
