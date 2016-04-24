@@ -15,7 +15,8 @@ class CheckInController < ApplicationController
   def create
     @event = Event.find_by_id(params[:id])
     @member = Member.find_by_email(params[:member][:email])
-    
+    session[:email] = params[:member][:email] if params[:member][:email]
+
     #@SID : Get users lat long from cookies via geolocation, check location.js
     @users_lat_lng = cookies[:lat_lng]
     @event_lat_lng = Array[@event.latitude,@event.longitude]
@@ -60,8 +61,6 @@ class CheckInController < ApplicationController
   def create_with_new_member
     @event = Event.find_by_id(params[:id])
     @member = Member.new(member_params)
-    session[:email] = params[:member][:email] if params[:member][:email]
-    @lat_lng = cookies[:lat_lng].split("|")
     if @member.save
       @check_in = CheckIn.new(event_id: @event.id, member_id: @member.id)
       if @check_in.save
@@ -71,7 +70,7 @@ class CheckInController < ApplicationController
         flash[:success] = @check_in.errors.messages
       end
     else
-      flash[:danger] = @member.errors.messages
+      flash[:warning] = @member.errors.full_messages.to_sentence
       redirect_to action: "new_with_new_member", id: @event.id
     end
   end

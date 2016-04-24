@@ -18,10 +18,10 @@ class RsvpController < ApplicationController
     if (@member)
       @rsvp = CheckIn.new(event_id: @event.id, member_id: @member.id)
       if @rsvp.save
-        flash[:notice] = "Thank you for RSVPing!"
+        flash[:success] = "Thank you for RSVPing!"
         redirect_to root_path
       else
-        flash[:notice] = @check_in.errors.messages
+        flash[:danger] = @check_in.errors.messages
       end
     else
       redirect_to :action => 'new_with_new_member', :id => @event.id
@@ -34,13 +34,13 @@ class RsvpController < ApplicationController
     if @member.save
       @rsvp = CheckIn.new(event_id: @event.id, member_id: @member.id)
       if @rsvp.save
-        flash[:notice] = "Thank you for RSVPing!"
+        flash[:success] = "Thank you for RSVPing!"
         redirect_to root_path
       else
-        flash[:notice] = @check_in.errors.messages
+        flash[:danger] = @check_in.errors.messages
       end
     else
-      flash[:notice] = @member.errors.messages
+      flash[:warning] = @member.errors.full_messages.to_sentence
       redirect_to action: "new_with_new_member", id: @event.id
     end
   end
