@@ -2,6 +2,11 @@
   <h2 class="section-subheading">R.S.V.P to <%= @event.title %></h2>
   <h1> Welcome to Aggie Graduate &amp; Professional Community Club! </h1>
   <div class="form-box">
+  
+   <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>"><%= value %></div>
+  <% end %>
+  
     <%= form_tag(:action => 'create' , :method => 'POST', :id => @event.id, :class => 'form-group') do %>
     <h4>Please enter your email id :</h4>
     <%= email_field(:member, :email, :class=> 'form-control') %>

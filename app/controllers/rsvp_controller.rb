@@ -16,12 +16,13 @@ class RsvpController < ApplicationController
     @member = Member.find_by_email(params[:member][:email])
     session[:email] = params[:member][:email] if params[:member][:email]
     if (@member)
-      @rsvp = CheckIn.new(event_id: @event.id, member_id: @member.id)
+      @rsvp = Rsvp.new(event_id: @event.id, member_id: @member.id)
       if @rsvp.save
         flash[:success] = "Thank you for RSVPing!"
         redirect_to root_path
       else
-        flash[:danger] = @check_in.errors.messages
+        flash[:danger] = @rsvp.errors[:member_id]
+        redirect_to :action => 'new', :id => @event.id
       end
     else
       redirect_to :action => 'new_with_new_member', :id => @event.id
@@ -32,7 +33,7 @@ class RsvpController < ApplicationController
     @event = Event.find_by_id(params[:id])
     @member = Member.new(member_params)
     if @member.save
-      @rsvp = CheckIn.new(event_id: @event.id, member_id: @member.id)
+      @rsvp = Rsvp.new(event_id: @event.id, member_id: @member.id)
       if @rsvp.save
         flash[:success] = "Thank you for RSVPing!"
         redirect_to root_path
