@@ -21,7 +21,7 @@
           <tr>
             <td><%= event.title %></td>
             <td><%= event.venue %></td>
-            <td><%= event.end_time %></td>
+            <td><%= event.end_time.to_formatted_s(:short) %></td>
             <td><%= link_to 'Check In',controller: "check_in", action: "new", id: event.id %></td>
           </tr>
       <% end %>
