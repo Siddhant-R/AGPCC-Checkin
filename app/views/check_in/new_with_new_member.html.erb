@@ -2,8 +2,8 @@
   <h2 class="section-subheading">Check-In to <%= @event.title %></h2>
   <h1> Welcome to Aggie Graduate &amp; Professional Community Club! </h1>
   <h3>Hmm.. Looks like you are checking in for the first time. We need some more information!</h3>
-  <% if flash[:notice] %>
-  <div class="alert alert-danger fade in"><%= flash[:notice] %></div>
+  <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>"><%= value %></div>
   <% end %>
   <div class="form-box">
   <%= form_for(:member, :url => {:action => 'create_with_new_member' ,:method => 'POST', :controller => 'check_in' ,:id => @event.id, :class => 'form-group'}) do |f| %>  

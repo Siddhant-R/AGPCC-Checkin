@@ -7,8 +7,8 @@ class Member < ActiveRecord::Base
     has_many :check_ins, :class_name => CheckIn, :foreign_key => :member_id
     has_many :rsvps, class_name: 'Rsvp', foreign_key: :member_id
     
-    GENDER=['male', 'female']
-    CLASSIFICATION=['Master', 'PhD', 'Undergrad']
+    GENDER=['Male', 'Female']
+    CLASSIFICATION=['Master', 'Ph.D.', 'Undergraduate']
     
     def to_s
         email
