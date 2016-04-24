@@ -4,7 +4,7 @@ function getGeoLocation() {
   }
   else {
     alert("Location Services are not supported by your browser. Please contact helpdesk to checkin.")
-    var cookie_val = "ERROR: Location Services are not supported by your browser. Please contact helpdesk to checkin.";
+    var cookie_val = "ERROR Location Services are not supported by your browser. Please contact helpdesk to checkin.";
     document.cookie = "lat_lng=" + escape(cookie_val);
   }
 }
@@ -16,7 +16,7 @@ function setGeoCookie(position) {
   }
   else {
     alert("Location Services are not supported by your browser. Please contact helpdesk to checkin.")
-    var cookie_val = "ERROR: Location Services are not supported by your browser. Please contact helpdesk to checkin.";
+    var cookie_val = "ERROR Location Services are not supported by your browser. Please contact helpdesk to checkin.";
     document.cookie = "lat_lng=" + escape(cookie_val);
   }
   
@@ -25,22 +25,22 @@ function setGeoCookie(position) {
 function showError(error) {
     switch(error.code) {
         case error.PERMISSION_DENIED:
-            var cookie_val = "ERROR: In order to check in, Please permit AGPCC APP to use location services ";
+            var cookie_val = "ERROR In order to check in, Please permit AGPCC APP to use location services ";
             document.cookie = "lat_lng=" + escape(cookie_val);
             alert(cookie_val);
             break;
         case error.POSITION_UNAVAILABLE:
-            var cookie_val = "ERROR: Please Enable your GPS"
+            var cookie_val = "ERROR Please Enable your GPS"
             document.cookie = "lat_lng=" + escape(cookie_val);
             alert(cookie_val);
             break;
         case error.TIMEOUT:
-            var cookie_val = "ERROR: The request to get user location timed out."
+            var cookie_val = "ERROR The request to get user location timed out."
             document.cookie = "lat_lng=" + escape(cookie_val);
             alert(cookie_val);
             break;
         case error.UNKNOWN_ERROR:
-            var cookie_val = "ERROR: An unknown error occurred."
+            var cookie_val = "ERROR An unknown error occurred."
             document.cookie = "lat_lng=" + escape(cookie_val);
             alert(cookie_val);
             break;
