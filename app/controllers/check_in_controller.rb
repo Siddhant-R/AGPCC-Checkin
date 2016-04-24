@@ -5,6 +5,7 @@ class CheckInController < ApplicationController
   end
   
   def new_with_new_member
+    @email_id = session[:email]
     @event = Event.find_by_id(params[:id])
   end
 
@@ -59,6 +60,7 @@ class CheckInController < ApplicationController
   def create_with_new_member
     @event = Event.find_by_id(params[:id])
     @member = Member.new(member_params)
+    session[:email] = params[:member][:email] if params[:member][:email]
     @lat_lng = cookies[:lat_lng].split("|")
     if @member.save
       @check_in = CheckIn.new(event_id: @event.id, member_id: @member.id)
