@@ -22,7 +22,11 @@ class CheckInController < ApplicationController
     #@SID : Calculate User's distance from event
     distance_from_event = distance(@users_lat_lng, @event_lat_lng)
     
-    #if()
+    if(distance_from_event > 100.0)
+      flash[:notice] = "Failed! You need to be present in the event to check in"
+      redirect_to root_path
+      return
+    end
     
 
     if (@member)
