@@ -1,6 +1,12 @@
 <div class="container">
-  <h2 class="section-subheading">Check-In to <%= @event.title %></h2>
-  <h1> Welcome to Aggie Graduate &amp; Professional Community Club! </h1>
+  <h2 class="section-subheading">Check-In</h2>
+      <div class="jumbotron">
+          <h1><%= @event.venue %></h1>
+          <h3><%= @event.title %> </h3>
+          <h4> <%= @event.description %></h4>
+          <h3 class="blink">&#9673; Live</h3>
+      </div>
+
   <div class="form-box">
   
   <% flash.each do |key, value| %>
@@ -8,10 +14,10 @@
   <% end %>
   
     <%= form_tag(:action => 'create' , :method => 'POST', :id => @event.id, :class => 'form-group') do %>
-    <h4>Please enter your email id :</h4>
-    <%= email_field(:member, :email, :class=> 'form-control') %>
+    <h1>Please enter your email id to check in:</h1>
+    <%= email_field(:member, :email, :class=> 'form-control input-lg') %>
     <br>
-    <%= submit_tag "Check In", :class => "btn btn-warning"  %>
+    <%= submit_tag "Check In", :class => "btn btn-lg btn-warning"  %>
     <% end %>
     <%- unless @lat_lng %>
       <script>
@@ -19,4 +25,5 @@
       </script>
     <%- end %>
   </div>
+
 </div>
