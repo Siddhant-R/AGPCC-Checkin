@@ -6,6 +6,7 @@ class RsvpController < ApplicationController
   def new_with_new_member
     @email_id = session[:email]
     @event = Event.find_by_id(params[:id])
+    @member = Member.new
   end
 
   def index
@@ -32,13 +33,14 @@ class RsvpController < ApplicationController
   def create_with_new_member
     @event = Event.find_by_id(params[:id])
     @member = Member.new(member_params)
+    #@first_name = @member[:first_name] 
     if @member.save
       @rsvp = Rsvp.new(event_id: @event.id, member_id: @member.id)
       if @rsvp.save
         flash[:success] = "Thank you for RSVPing!"
         redirect_to root_path
       else
-        flash[:danger] = @check_in.errors.messages
+        flash[:danger] = @rsvp.errors.messages
       end
     else
       flash[:warning] = @member.errors.full_messages.to_sentence

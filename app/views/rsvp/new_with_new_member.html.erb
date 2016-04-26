@@ -8,9 +8,9 @@
   <div class="form-box">
   <%= form_for(:member, :url => {:action => 'create_with_new_member' ,:method => 'POST', :controller => 'rsvp' ,:id => @event.id, :class => 'form-group'}) do |f| %>  
     <h4> First Name :</h4>
-    <%= f.text_field(:first_name, :class=> 'form-control') %>
+    <%= f.text_field :first_name, :class=> 'form-control' ,:value => @member[:first_name] %>
     <h4> Last Name :</h4>
-    <%= f.text_field(:last_name, :class=> 'form-control') %>
+    <%= f.text_field :last_name, :class=> 'form-control' , :value => @member.last_name %>
     <h4> Email :</h4>
     <%= f.email_field :email, :class => 'form-control', :value => @email_id %>
     <h4> Gender :</h4>

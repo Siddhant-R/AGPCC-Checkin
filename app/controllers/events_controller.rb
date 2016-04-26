@@ -9,10 +9,14 @@ class EventsController < ApplicationController
   
   def create
     @event = Event.new(event_params)
-    if @event.save
-      redirect_to events_path, :notice => "Event Successfully Created"
+    if @event.start_time > @event.end_time
+      redirect_to new_admin_event_path, :notice => "Start time cannot be after end time"
     else
-      render "new"
+      if @event.save
+        redirect_to events_path, :notice => "Event Successfully Created!"
+      else
+        render "new"
+      end
     end
   end
   
