@@ -13,7 +13,7 @@ class EventsController < ApplicationController
       redirect_to new_admin_event_path, :notice => "Start time cannot be after end time"
     else
       if @event.save
-        redirect_to events_path, :notice => "Event Successfully Created!"
+        redirect_to  admin_events_path, :notice => "Event successfully created"
       else
         render "new"
       end
@@ -21,10 +21,13 @@ class EventsController < ApplicationController
   end
   
   def new
+    if !admin_user_signed_in?
+      redirect_to root_path
+    end
   end
   
   private
   def event_params
-    params.require(:event).permit(:title, :description, :venue, :ticket_price, :start_time, :end_time, :longitude, :latitude )
+    params.require(:event).permit(:title, :description, :venue, :start_time, :end_time)
   end
 end
