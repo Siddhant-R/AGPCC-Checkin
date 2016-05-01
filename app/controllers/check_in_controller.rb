@@ -6,6 +6,8 @@ class CheckInController < ApplicationController
   
   def new_with_new_member
     @email_id = session[:email]
+    @first_name = session[:first_name] 
+    @last_name = session[:last_name]
     @event = Event.find_by_id(params[:id])
   end
 
@@ -49,6 +51,8 @@ class CheckInController < ApplicationController
     if (@member)
       @check_in = CheckIn.new(event_id: @event.id, member_id: @member.id)
       if @check_in.save
+        @member.paid_status ? @member.points+=1 : @member.points
+        @member.save
         flash[:success] = "Check in Successful. Thank You!"
         redirect_to root_path
       else
@@ -63,6 +67,8 @@ class CheckInController < ApplicationController
   def create_with_new_member
     @event = Event.find_by_id(params[:id])
     @member = Member.new(member_params)
+    session[:first_name] = @member.first_name
+    session[:last_name] = @member.last_name
     if @member.save
       @check_in = CheckIn.new(event_id: @event.id, member_id: @member.id)
       if @check_in.save

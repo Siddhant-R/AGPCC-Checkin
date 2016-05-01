@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   post 'check_in/:id/create' => 'check_in#create'
   post 'check_in/:id/create_with_new_member' => 'check_in#create_with_new_member'
   
+  #get '/admin/events/new' => 'events#new'
+  
 
   get 'events/index'
   get 'events/show'

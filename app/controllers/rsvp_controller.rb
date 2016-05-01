@@ -5,8 +5,9 @@ class RsvpController < ApplicationController
   
   def new_with_new_member
     @email_id = session[:email]
+    @first_name = session[:first_name] 
+    @last_name = session[:last_name]
     @event = Event.find_by_id(params[:id])
-    @member = Member.new
   end
 
   def index
@@ -33,7 +34,8 @@ class RsvpController < ApplicationController
   def create_with_new_member
     @event = Event.find_by_id(params[:id])
     @member = Member.new(member_params)
-    #@first_name = @member[:first_name] 
+    session[:first_name] = @member.first_name
+    session[:last_name] = @member.last_name
     if @member.save
       @rsvp = Rsvp.new(event_id: @event.id, member_id: @member.id)
       if @rsvp.save

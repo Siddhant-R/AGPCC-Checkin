@@ -3,7 +3,7 @@ class Member < ActiveRecord::Base
     validates :last_name, presence: true
     validates :email, :gender, :classification, presence: true
     validates :email, uniqueness: true
-    validates :email, format: { with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i, message: "Please enter a valid email address!" }
+    validates :email, format: { with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i, message: " Error please enter valid details!" }
     
     has_many :check_ins, :class_name => CheckIn, :foreign_key => :member_id
     has_many :rsvps, class_name: 'Rsvp', foreign_key: :member_id
