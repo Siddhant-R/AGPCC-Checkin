@@ -1,7 +1,7 @@
 class RsvpController < ApplicationController
   def new
     @event = Event.find_by_id(params[:id])
-    if !@event
+    if !@event || @event.start_time < DateTime.now 
       redirect_to root_path
     end
   end
@@ -11,12 +11,9 @@ class RsvpController < ApplicationController
     @first_name = session[:first_name] 
     @last_name = session[:last_name]
     @event = Event.find_by_id(params[:id])
-    if !@event
+    if !@event || @event.start_time < DateTime.now
       redirect_to root_path
     end
-  end
-
-  def index
   end
 
   def create
@@ -56,7 +53,10 @@ class RsvpController < ApplicationController
     end
   end
   
+  private
+  
   def member_params
     params.require(:member).permit(:first_name, :last_name, :email, :gender, :classification)
   end
+  
 end
