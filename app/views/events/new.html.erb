@@ -3,42 +3,6 @@
   <% flash.each do |key, value| %>
       <div class="alert alert-<%= key %>"><%= value %></div>
   <% end %>
-  <style>
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-      #map {
-        height: 400px;
-      }
-      .controls {
-        margin-top: 10px;
-        border: 1px solid transparent;
-        border-radius: 2px 0 0 2px;
-        box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        height: 32px;
-        outline: none;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-      }
-
-      .pac-container {
-        font-family: Roboto;
-      }
-
-      #type-selector {
-        color: #fff;
-        background-color: #4d90fe;
-        padding: 5px 11px 0px 11px;
-      }
-
-      #type-selector label {
-        font-family: Roboto;
-        font-size: 13px;
-        font-weight: 300;
-      }
-    </style>
   <div class="form-box">
   <%= form_for(:event, :url => {:action => 'create' ,:method => 'POST', :controller => 'events', :class => 'form-group'}) do |f| %>  
     <h4> Event Title :</h4>
@@ -48,11 +12,7 @@
     <h4> Venue :</h4>
     <%= f.text_field :venue, :class=> 'form-control', :id=> 'pac-input', :place_holder=> 'Enter Location' %>
     <br><br>
-    <body>
-      <div id="map"></div>
-      
-      
-    </body>
+    <body><div id="map"></div></body>
     <br><br>
     <h4> Start Time :</h4>
     <%= f.datetime_field :start_time, :class=> 'form-control' %>
@@ -63,6 +23,43 @@
   <% end %>
   </div>
 </div>
+
+<style>
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  #map {
+    height: 400px;
+  }
+  .controls {
+    margin-top: 10px;
+    border: 1px solid transparent;
+    border-radius: 2px 0 0 2px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    height: 32px;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  }
+
+  .pac-container {
+    font-family: Roboto;
+  }
+
+  #type-selector {
+    color: #fff;
+    background-color: #4d90fe;
+    padding: 5px 11px 0px 11px;
+  }
+
+  #type-selector label {
+    font-family: Roboto;
+    font-size: 13px;
+    font-weight: 300;
+  }
+</style>
 
 <script>
   // This example requires the Places library. Include the libraries=places
