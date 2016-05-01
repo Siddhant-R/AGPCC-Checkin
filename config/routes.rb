@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'analyze/index'
+
   get 'rsvp/:id/new' => 'rsvp#new'
   get 'rsvp/:id/new_with_new_member' => 'rsvp#new_with_new_member'
   

@@ -23,6 +23,7 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
 gem 'geocoder'
 gem 'active_admin_datetimepicker'
+gem 'highcharts-rails', '~> 4.1', '>= 4.1.9'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
