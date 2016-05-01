@@ -18,6 +18,11 @@ class RsvpController < ApplicationController
 
   def create
     @event = Event.find_by_id(params[:id])
+    if !valid_email?(params[:member][:email])
+      flash[:danger] = "Email error please enter valid details!"
+      redirect_to :action => 'new', :id => @event.id
+      return
+    end
     @member = Member.find_by_email(params[:member][:email])
     session[:email] = params[:member][:email] if params[:member][:email]
     if (@member)

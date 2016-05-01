@@ -22,6 +22,11 @@ class CheckInController < ApplicationController
 
   def create
     @event = Event.find_by_id(params[:id])
+    if !valid_email?(params[:member][:email])
+      flash[:danger] = "Email error please enter valid details!"
+      redirect_to :action => 'new', :id => @event.id
+      return
+    end
     @member = Member.find_by_email(params[:member][:email])
     session[:email] = params[:member][:email] if params[:member][:email]
 
@@ -113,6 +118,10 @@ class CheckInController < ApplicationController
 
     rm * c # Delta in meters
  end
+ 
+  def valid_email?(email)
+    email =~ /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  end
   
   
 end
