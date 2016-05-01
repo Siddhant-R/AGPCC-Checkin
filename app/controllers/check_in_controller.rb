@@ -2,6 +2,9 @@ class CheckInController < ApplicationController
   
   def new
     @event = Event.find_by_id(params[:id])
+    if !@event
+      redirect_to root_path
+    end
   end
   
   def new_with_new_member
@@ -9,6 +12,9 @@ class CheckInController < ApplicationController
     @first_name = session[:first_name] 
     @last_name = session[:last_name]
     @event = Event.find_by_id(params[:id])
+    if !@event
+      redirect_to root_path
+    end
   end
 
   def index
