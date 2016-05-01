@@ -9,7 +9,7 @@ class EventsController < ApplicationController
   
   def create
     @event = Event.new(event_params)
-    if @event.start_time > @event.end_time
+    if @event.start_time >= @event.end_time
       redirect_to new_admin_event_path, :notice => "Start time cannot be after end time"
     else
       if @event.save
