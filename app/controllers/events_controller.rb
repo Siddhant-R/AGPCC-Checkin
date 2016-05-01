@@ -26,6 +26,30 @@ class EventsController < ApplicationController
     end
   end
   
+  def edit
+    @event = Event.find_by_id(params[:id])
+  end
+  
+  def update
+    @event = Event.find_by_id(params[:id])
+    @event.update(event_params)
+    if !@event.valid?
+      flash[:warning] = @event.errors.full_messages.to_sentence
+      redirect_to action: "edit", id: @event.id
+    else
+      if @event.start_time > @event.end_time
+        flash[:warning] = "Start time cannot be after end time"
+        redirect_to action: "edit", id: @event.id
+      else
+        if @event.save
+          redirect_to  admin_events_path, :notice => "Event updated successfully "
+        else
+          render "new"
+        end
+      end
+    end
+  end
+  
   def new
     if !admin_user_signed_in?
       redirect_to root_path
