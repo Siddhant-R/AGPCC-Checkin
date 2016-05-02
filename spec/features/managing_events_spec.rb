@@ -34,22 +34,5 @@ feature 'Managing Admin users' do
       expect(page).to have_content 'admin1@example.com'
       expect(page).to have_content 'Admin user was successfully created.'
     end
-
-    #context 'with an existing blog post' do
-    #  background do
-    #    @post = Post.create(:title => 'Awesome Blog Post', :body => 'Lorem ipsum dolor sit amet')
-    #  end
-    #
-    #  scenario 'Editing an existing blog' do
-    #    visit admin_post_path(@post)
-    #
-    #    click_link 'Edit'
-    #
-    #    fill_in 'Title', :with => 'Not really Awesome Blog Post'
-    #    click_button 'Update Post'
-    #
-    #    expect(page).to have_content 'Not really Awesome Blog Post'
-    #  end
-    #end
   end
 end

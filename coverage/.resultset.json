@@ -498,6 +498,17 @@
   },
   "RSpec": {
     "coverage": {
+      "/home/ubuntu/workspace/app/controllers/analyze_controller.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
       "/home/ubuntu/workspace/app/controllers/check_in_controller.rb": [
         1,
         null,
@@ -1001,6 +1012,8 @@
         0,
         0,
         0,
+        0,
+        0,
         0
       ],
       "/home/ubuntu/workspace/app/models/member.rb": [
@@ -1031,6 +1044,8 @@
         0,
         0,
         0,
+        0,
+        0,
         0
       ],
       "/home/ubuntu/workspace/app/helpers/dashboards_helper.rb": [
@@ -1039,6 +1054,10 @@
       ],
       "/home/ubuntu/workspace/app/helpers/events_helper.rb": [
         0,
+        0,
+        0
+      ],
+      "/home/ubuntu/workspace/app/helpers/analyze_helper.rb": [
         0,
         0
       ],
@@ -1064,6 +1083,6 @@
         0
       ]
     },
-    "timestamp": 1462231355
+    "timestamp": 1462232825
   }
 }
