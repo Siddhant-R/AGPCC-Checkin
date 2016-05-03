@@ -1,1 +1,5 @@
-<%= render partial: "partials/general" %>
+<% if current_page?("/admin/events/new") %>
+  <%= render partial: "partials/admin" %>
+<% else %>
+  <%= render partial: "partials/general" %>
+<% end %>
