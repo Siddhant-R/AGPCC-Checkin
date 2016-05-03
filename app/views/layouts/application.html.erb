@@ -1,4 +1,6 @@
-<% if current_page?("/admin/events/new") || current_page?("/analyze/index") %>
+<% if controller_name == "events" && action_name == "edit" %>
+    <%= render partial: "partials/admin" %>
+<% elsif current_page?("/admin/events/new") || current_page?("/analyze/index") %>
   <%= render partial: "partials/admin" %>
 <% else %>
   <%= render partial: "partials/general" %>
