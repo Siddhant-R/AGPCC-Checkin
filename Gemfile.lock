@@ -120,6 +120,7 @@ GEM
     docile (1.1.5)
     erubis (2.7.0)
     execjs (2.6.0)
+    ffi (1.9.10)
     formtastic (3.1.4)
       actionpack (>= 3.2.13)
     formtastic_i18n (0.6.0)
@@ -205,6 +206,8 @@ GEM
       activesupport (>= 3.0)
       i18n
       polyamorous (~> 1.2)
+    rautomation (0.17.0)
+      ffi (~> 1.9.0)
     rdoc (4.2.2)
       json (~> 1.4)
     responders (2.2.0)
@@ -295,6 +298,7 @@ DEPENDENCIES
   launchy
   pg
   rails (= 4.2.5)
+  rautomation
   rspec-rails (~> 3.0)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)

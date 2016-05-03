@@ -30,11 +30,8 @@ feature 'Managing Members' do
           
           expect(page).to have_content 'Member was successfully created.'
           expect(page).to have_content 'JohnDoe@example.com'
-        end
-        
-        
+        end    
     end
-
 
     context 'with an existing member' do
         background do
@@ -58,14 +55,22 @@ feature 'Managing Members' do
           click_button 'Login'
         end
         
-        scenario 'Update a member with valid details' do
+        scenario 'edit first name of the member' do
             click_link 'Members'
             click_link 'Edit'
             
             fill_in 'member_first_name', :with => 'Jill'
-            fill_in 'member_last_name', :with => 'Dove'
             click_button 'Update Member'
             expect(page).to have_content 'Member was successfully updated.'
-       end  
+        end 
+        
+        scenario 'edit last name of the member' do
+            click_link 'Members'
+            click_link 'Edit'
+            
+            fill_in 'member_first_name', :with => 'Dove'
+            click_button 'Update Member'
+            expect(page).to have_content 'Member was successfully updated.'
+        end
     end
 end
