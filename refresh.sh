@@ -8,7 +8,7 @@ BLUE='\033[1;34m'
 BLOCK_BLUE='\e[44m'
 BLOCK_NORMAL='\e[49m'
 #Header
-printf "%b" "\n${BLOCK_BLUE}                    --- REMEBER SID :P  ---        ${BLOCK_NORMAL}\n"
+printf "%b" "\n${BLOCK_BLUE}                    --- REMEMBER SID :P :)  ---        ${BLOCK_NORMAL}\n"
 bundle install
 sudo service postgresql restart
 rake db:reset
