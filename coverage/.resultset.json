@@ -745,6 +745,13 @@
         null,
         1,
         0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
         0,
         0,
         0,
@@ -789,7 +796,13 @@
         1,
         4,
         0,
+        0,
         null,
+        4,
+        4,
+        4,
+        4,
+        4,
         4,
         null,
         null,
@@ -903,7 +916,6 @@
         0
       ],
       "/home/ubuntu/workspace/app/admin/event.rb": [
-        0,
         0,
         0,
         0,
@@ -1095,6 +1107,7 @@
         0,
         0,
         0,
+        0,
         0
       ],
       "/home/ubuntu/workspace/app/models/admin_user.rb": [
@@ -1107,6 +1120,9 @@
         0
       ],
       "/home/ubuntu/workspace/app/models/check_in.rb": [
+        0,
+        0,
+        0,
         0,
         0,
         0,
@@ -1138,6 +1154,9 @@
         0
       ],
       "/home/ubuntu/workspace/app/models/rsvp.rb": [
+        0,
+        0,
+        0,
         0,
         0,
         0,
@@ -1183,6 +1202,6 @@
         0
       ]
     },
-    "timestamp": 1462330468
+    "timestamp": 1462384848
   }
 }
