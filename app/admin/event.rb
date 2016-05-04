@@ -4,6 +4,7 @@ ActiveAdmin.register Event do
     
     scope :past_events
     scope :future_events
+    scope :current_events
     
     #scope :ongoing_events
     
