@@ -16,7 +16,7 @@ class Event < ActiveRecord::Base
     
     scope :past_events,->{ where('end_time < ?', DateTime.now) }
     scope :future_events,->{ where('start_time > ?', DateTime.now) }
-    scope :current_events,->{ where('start_time < ?', DateTime.now).where('end_time > ?', DateTime.now) }
+    scope :ongoing_events,->{ where('start_time < ?', DateTime.now).where('end_time > ?', DateTime.now) }
     
     def to_s
         title
