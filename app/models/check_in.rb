@@ -1,4 +1,7 @@
 class CheckIn < ActiveRecord::Base
+    validates :member_id, presence: true
+    validates :event_id, presence: true
+    
     belongs_to :member, :class_name => Member
     belongs_to :event, :class_name => Event
     
