@@ -74,3 +74,4 @@ group :development, :test, :production do
   gem 'rails-erd'
 
 end
+gem 'web-console', group: :development
