@@ -49,7 +49,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
  # gem 'byebug'
 #end
 
-group :development, :test, :production do
+group :development, :test do
   gem 'rspec-rails', '~> 3.0'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
@@ -57,7 +57,8 @@ group :development, :test, :production do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-
+end
+group :development, :test, :production do
   gem 'bootstrap-sass', '~> 3.3.6'
   gem 'momentjs-rails', '>= 2.9.0'
   gem 'bootstrap3-datetimepicker-rails', '~> 4.17.37'
@@ -74,4 +75,3 @@ group :development, :test, :production do
   gem 'rails-erd'
 
 end
-gem 'web-console', group: :development
