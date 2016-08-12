@@ -20,9 +20,7 @@
     <%= submit_tag "Check In", :class => "btn btn-lg btn-warning"  %>
     <% end %>
     <%- unless @lat_lng %>
-      <script>
-        getGeoLocation();
-      </script>
+      
     <%- end %>
   </div>
 
