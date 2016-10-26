@@ -9,7 +9,7 @@ class Member < ActiveRecord::Base
     has_many :rsvps, class_name: 'Rsvp', foreign_key: :member_id
     
     GENDER=['Male', 'Female']
-    CLASSIFICATION=['Master', 'Ph.D.', 'Undergraduate']
+    CLASSIFICATION=['Master', 'Ph.D.', 'Undergraduate', 'Staff', 'Professional']
     
     def to_s
         email
